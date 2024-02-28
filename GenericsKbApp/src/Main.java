@@ -5,29 +5,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        Display.Prompt();
+
+
+
         KnowledgeBase kb = new KnowledgeBase();
 
-        KnowledgeBase.ReadFile("/Users/ethan/Documents/UCT/second-year/CSC-F/Assignments/Repos/Assignment1/Data-Structures--Assignment-1/GenericsKbApp/src/GenericsKB.txt");
+        //ReadFile("/Users/ethan/Documents/UCT/second-year/CSC-F/Assignments/Repos/Assignment1/Data-Structures--Assignment-1/GenericsKbApp/src/GenericsKB.txt");
     }
 
-    public static void ReadFile(String pathname) {
+    public static void LoadFile(String file) {
 
-        File file = new File(pathname);
-
-        try {
-
-            Scanner sc = new Scanner(file);
-
-            while (sc.hasNextLine()) {
-                String str = sc.nextLine();
-                System.out.println(str);
-            }
-            sc.close();
-        }
-        catch (FileNotFoundException e) {
-            System.out.println("dont stress");
-        }
+        KnowledgeBase.ReadFile(file);
 
     }
-    
+
+    public static void AddStmnt(String stmnt) {
+
+
+
+    }
+
+
+
 }
