@@ -29,4 +29,11 @@ public class Record {
         return Float.compare(confScore, record.confScore) == 0 && Objects.equals(term, record.term) && Objects.equals(stmnt, record.stmnt);
 
     }
+
+    public String toString() {
+
+        return term + "\t" + stmnt + "\t" + confScore;
+
+    }
+
 }
