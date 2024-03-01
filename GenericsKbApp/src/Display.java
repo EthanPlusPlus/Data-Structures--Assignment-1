@@ -17,24 +17,44 @@ public class Display {
         while( !input.equals("5") ){
 
             switch (input) {
-                case "1" :
-                    System.out.print("Filename: \n");
+                case "1" -> {
+                    System.out.print("Filename: ");
                     input = sc.next();
                     Main.LoadFile(input);
                     System.out.println(KnowledgeBase.base[10000]);
-                    break;
+                }
+                case "2" -> {
+                    System.out.println("Enter the term (lowercase): ");
+                    String term = sc.nextLine(); // Use nextLine() to read the entire line
+                    clearBuffer(sc);
+                    System.out.println("Enter the statement (first letter uppercase): ");
+                    String stmnt = sc.nextLine(); // Use nextLine() to read the entire line
+                    clearBuffer(sc);
+                    System.out.println("Enter the conf_score: ");
+                    float confScore = sc.nextFloat();
+                    clearBuffer(sc);
+                    KnowledgeBase.AddToKB(new Record(term, stmnt, confScore));
+                    System.out.println("Added to KB");
+                }
 
-                case "5":
+                case "3" -> {
 
-                    break;
+
+                }
+
+                case "5" -> {
+                }
             }
 
             System.out.println(CHOOSE);
             input = sc.next();
 
         }
+    }
 
-
-
+    private static void clearBuffer(Scanner scanner) {
+        if (scanner.hasNextLine()) {
+            scanner.nextLine();
+        }
     }
 }

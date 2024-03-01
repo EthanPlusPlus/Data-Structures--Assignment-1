@@ -13,6 +13,18 @@ public class Record {
 
     }
 
+    public String getTerm() {
+        return term;
+    }
+
+    public String getStmnt() {
+        return stmnt;
+    }
+
+    public float getConfScore() {
+        return confScore;
+    }
+
     public int compareTo(Record r) {
 
         return 21;

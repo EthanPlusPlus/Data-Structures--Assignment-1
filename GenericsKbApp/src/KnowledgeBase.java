@@ -19,6 +19,15 @@ public class KnowledgeBase {
 
     public static void AddToKB(Record record) {
 
+        for (int i = 0; i < n; i++) {
+
+            if (base[i].getTerm().equals(record.getTerm())){
+                base[i] = record;
+                return;
+            }
+
+        }
+
         base[n] = record;
         n++;
 
