@@ -48,7 +48,17 @@ public class Display {
 
                 }
 
+                case "4" -> {
+                    clearBuffer(sc);
+                    System.out.println("Enter search term: (lowercase)");
+                    String term = sc.nextLine();
+                    System.out.println("Enter search stmnt: (first letter uppercase)");
+                    String stmnt = sc.nextLine();
+                    System.out.println(KnowledgeBase.FindByTermAndStmnt( term, stmnt ));
+                }
+
                 case "5" -> {
+                    System.exit(0);
                 }
             }
 
