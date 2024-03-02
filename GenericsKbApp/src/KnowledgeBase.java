@@ -33,6 +33,21 @@ public class KnowledgeBase {
 
     }
 
+    public static Record FindByTerm(String term) {
+
+        for (int i = 0; i < n; i++) {
+
+            if (term.equals(base[i].getTerm())) {
+
+                return base[i];
+
+            }
+
+        }
+        System.out.println("None found");
+        return null;
+    }
+
     public static Record LineToRecord(String line) {
 
         String[] arr = line.split("\t");
