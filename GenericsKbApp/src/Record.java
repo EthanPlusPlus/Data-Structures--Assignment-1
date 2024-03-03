@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Record {
+public class Record implements Comparable<Record>{
 
     String term, stmnt;
     float confScore;
@@ -25,9 +25,28 @@ public class Record {
         return confScore;
     }
 
-    public int compareTo(Record r) {
+    public void setTerm(String term) {
+        this.term = term;
+    }
 
-        return 21;
+    public void setStmnt(String stmnt) {
+        this.stmnt = stmnt;
+    }
+
+    public void setConfScore(float confScore) {
+        this.confScore = confScore;
+    }
+
+    public void update(Record record) {
+
+        this.stmnt = record.getStmnt();
+        this.confScore = record.getConfScore();
+
+    }
+
+    public int compareTo(Record o) {
+
+        return this.getTerm().compareTo(o.getTerm());
 
     }
 

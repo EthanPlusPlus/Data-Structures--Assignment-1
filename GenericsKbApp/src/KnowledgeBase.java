@@ -4,11 +4,19 @@ import java.util.Scanner;
 
 public class KnowledgeBase {
 
-    public static Record[] base = new Record[100000];
+    public static BinarySearchTree<Record> base;
+
     public static int n = 0;
-    public static boolean notFirstBase = false;
+
+    public static boolean notFirstTime = false;
 
     public KnowledgeBase() {}
+
+    public static void CreateBase() {
+
+        base = new BinarySearchTree<Record>();
+
+    }
 
     public static Record CreateRecord(String term, String stmnt, float confScore){
 
@@ -18,49 +26,26 @@ public class KnowledgeBase {
 
     public static void AddToKB(Record record) {
 
-        for (int i = 0; i < n; i++) {
+        BinarySearchTree<Record>.BinaryTreeNode<Record> node = base.find(record);
 
-            if (base[i].getTerm().equals(record.getTerm()) && record.getConfScore() >= base[i].getConfScore()){
-                base[i] = record;
-                return;
-            }
+        if (node != null && record.getConfScore() >= node.data.getConfScore())
+            node.data.update(record);
+        else
+            base.insert(record);
 
-        }
-
-        if(!notFirstBase) {
-            base[n] = record;
-            n++;
-        }
     }
 
     public static Record FindByTerm(String term) {
 
-        for (int i = 0; i < n; i++) {
+        Record record = new Record(term, "", 0);
+        return base.find(record).data;
 
-            if (term.equals(base[i].getTerm())) {
-
-                return base[i];
-
-            }
-
-        }
-        System.out.println("None found");
-        return null;
     }
 
     public static Record FindByTermAndStmnt(String term, String stmnt) {
 
-        for (int i = 0; i < n; i++) {
-
-            if (term.equals(base[i].getTerm()) && stmnt.equals(base[i].getStmnt())) {
-
-                return base[i];
-
-            }
-
-        }
-        System.out.println("None found");
-        return null;
+        Record record = new Record(term, stmnt, 0);
+        return base.find(record).data;
 
     }
 
@@ -74,6 +59,9 @@ public class KnowledgeBase {
 
     public static void ReadFile(String pathname) {
 
+        if (!notFirstTime)
+            CreateBase();
+
         try {
 
             Scanner sc = new Scanner(new File(pathname));
@@ -84,7 +72,6 @@ public class KnowledgeBase {
                 AddToKB( LineToRecord( str ) );
 
             }
-            notFirstBase = true;
             sc.close();
         }
         catch (FileNotFoundException e) {

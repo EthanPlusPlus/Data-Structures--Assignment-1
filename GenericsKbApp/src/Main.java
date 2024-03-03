@@ -17,6 +17,7 @@ public class Main {
     public static void LoadFile(String file) {
 
         KnowledgeBase.ReadFile(file);
+        KnowledgeBase.notFirstTime = true;
 
     }
 

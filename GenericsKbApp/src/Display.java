@@ -22,7 +22,7 @@ public class Display {
                     System.out.print("Filename: ");
                     input = sc.next();
                     Main.LoadFile(input);
-                    System.out.println(KnowledgeBase.base[10000]);
+                    //System.out.println(KnowledgeBase.base);
                 }
                 case "2" -> {
                     clearBuffer(sc);
