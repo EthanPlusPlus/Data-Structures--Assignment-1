@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class test {
 
     public static void main(String[] args) {
@@ -19,6 +17,12 @@ public class test {
      * here we assume AddToKB is working as we do test it afterwards
      */
     private static void testDisplayPromptAndOthers() {
+
+        testDisplayPrompt();
+
+    }
+
+    private static void testDisplayPrompt() {
 
         /* Input: 1; test.txt; 5; 3; water; 2; water; A delicious drink; 1.0;
             3; water; 4; water; A delicious drink; 1; test2.txt; 5; "Random word123"
@@ -62,6 +66,5 @@ public class test {
         r1.update(r2);
         System.out.println(r1);
     }
-
 
 }
