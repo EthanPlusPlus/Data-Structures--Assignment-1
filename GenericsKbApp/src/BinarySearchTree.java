@@ -1,3 +1,8 @@
+/**
+ * @author Hussein Suleman
+ * @param <T> will be used as Record
+ */
+
 public class BinarySearchTree<T extends Comparable<T>>{
 
     BinaryTreeNode<T> root;
@@ -45,6 +50,19 @@ public class BinarySearchTree<T extends Comparable<T>>{
                 insert (d, node.right);
         } 
     }
+
+    public void preOrder ()
+    {
+        preOrder (root);
+    }
+    public void preOrder ( BinaryTreeNode<T> node ) {
+        if (node != null) {
+            System.out.println(node.data);
+            preOrder(node.getLeft());
+            preOrder(node.getRight());
+        }
+    }
+
 
 
     public class BinaryTreeNode<T> {

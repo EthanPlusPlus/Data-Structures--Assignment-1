@@ -1,0 +1,6 @@
+water	Substance essential for life	0.93
+drake	The worst rapper still alive	0.2
+phone case	Protects a phone from fall damage	0.4
+jabulani	Football used in the 2010 Soccer World Cup	1.0
+dog	A common domesticated animal found in a household	0.8
+clifton 1st	The most popular beach in Cape Town	0.95
