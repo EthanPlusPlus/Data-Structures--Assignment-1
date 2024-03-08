@@ -109,6 +109,9 @@ public class KnowledgeBase {
 
     }
 
+    /**
+     * Traverse through array and print each Record on a newline
+     */
     public static void Traverse() {
         for (int i = 0; i < n; i++) {
             System.out.println(base[i]);
