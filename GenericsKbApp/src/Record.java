@@ -1,5 +1,9 @@
 import java.util.Objects;
 
+/**
+ * Record represent a collection containing a term, statement and confidence score
+ *
+ */
 public class Record implements Comparable<Record>{
 
     String term, stmnt;
