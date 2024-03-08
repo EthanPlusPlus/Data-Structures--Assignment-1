@@ -1,5 +1,5 @@
 /**
- * @author Hussein Suleman
+ * @author Hussain Suleman
  * @param <T> will be used as Record
  */
 
