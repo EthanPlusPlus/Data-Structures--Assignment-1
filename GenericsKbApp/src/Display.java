@@ -7,6 +7,12 @@ public class Display {
 
     public static String input;
 
+    public static void main(String[] args) {
+
+        Prompt();
+
+    }
+
     public static void Prompt() {
 
         Scanner sc = new Scanner(System.in);

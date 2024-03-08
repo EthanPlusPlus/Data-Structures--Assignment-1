@@ -59,7 +59,7 @@ public class test {
 
         System.out.println(r1);
         System.out.println(r2);
-        //r1.update(r2);
+        r1.update(r2);
         System.out.println(r1);
     }
 

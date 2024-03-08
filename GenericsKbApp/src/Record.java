@@ -25,9 +25,16 @@ public class Record {
         return confScore;
     }
 
-    public int compareTo(Record r) {
+    public void update(Record record) {
 
-        return 21;
+        this.stmnt = record.getStmnt();
+        this.confScore = record.getConfScore();
+
+    }
+
+    public int compareTo(Record o) {
+
+        return this.getTerm().compareTo(o.getTerm());
 
     }
 
