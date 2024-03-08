@@ -22,7 +22,7 @@ clean:
 	$(RM) $(BINDIR)/*.class
 
 run:
-	java -cp $(BINDIR) GraphExperiment		#replace with the name of the main file (One that contains the main method)
+	java -cp $(BINDIR) Display
 
 javadoc:
 	javadoc -d $(DOCDIR) $(SRCDIR)/*.java
