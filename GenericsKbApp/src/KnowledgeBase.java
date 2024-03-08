@@ -10,6 +10,14 @@ public class KnowledgeBase {
 
     public KnowledgeBase() {}
 
+    /**
+     * Creates new Record
+     *
+     * @param term  lowercase word acts as unique key in BST
+     * @param stmnt first letter uppercase and belongs to term
+     * @param confScore represents the validity of statement
+     * @return  newly created Record
+     */
     public static Record CreateRecord(String term, String stmnt, float confScore){
 
         return new Record(term, stmnt, confScore);
@@ -71,6 +79,11 @@ public class KnowledgeBase {
 
     }
 
+    public static void Traverse() {
+        for (int i = 0; i < n; i++) {
+            System.out.println(base[i]);
+        }
+    }
 
     public static void ReadFile(String pathname) {
 
@@ -86,9 +99,10 @@ public class KnowledgeBase {
             }
             notFirstBase = true;
             sc.close();
+            System.out.println("Successfully updated the knowledge base!\n");
         }
         catch (FileNotFoundException e) {
-            System.out.println("dont stress");
+            System.out.println("File not found! Please try again.\n");
         }
 
     }
