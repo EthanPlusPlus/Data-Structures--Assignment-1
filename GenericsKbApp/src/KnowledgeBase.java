@@ -20,7 +20,7 @@ public class KnowledgeBase {
     public KnowledgeBase() {}
 
     /**
-     * CreateBase calls on BST constructor
+     * CreateBase calls on BST constructor and initialises base
      */
     public static void CreateBase() {
 
@@ -122,10 +122,10 @@ public class KnowledgeBase {
 
             }
             sc.close();
-            System.out.println("Successfully updated the knowledge base!");
+            System.out.println("Successfully updated the knowledge base!\n");
         }
         catch (FileNotFoundException e) {
-            System.out.println("File not found! Please try again.");
+            System.out.println("File not found! Please try again.\n");
         }
 
         notFirstTime = true;

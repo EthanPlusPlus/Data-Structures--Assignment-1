@@ -47,11 +47,10 @@ public class Display {
                     String stmnt = sc.nextLine(); // Use nextLine() to read the entire line
                     System.out.println("Enter the confidence score: ");
                     float confScore = sc.nextFloat();
-                    System.out.println(term + stmnt + confScore);
 
                     KnowledgeBase.AddToKB(new Record(term, stmnt, confScore));
 
-                    System.out.println("Successfully updated the knowledge base!");
+                    System.out.println("Successfully updated the knowledge base!\n");
                 }
 
                 case "3" -> {
@@ -59,18 +58,20 @@ public class Display {
                     System.out.println("Enter search term: (lowercase)");
                     input = sc.nextLine();
 
-                    System.out.println(KnowledgeBase.FindByTerm( input ));
+                    Record r = KnowledgeBase.FindByTerm( input );
+                    System.out.println("Term: " + r.getTerm() + "\nStatement: " + r.getStmnt() + "\nConfidence Score: " + r.getConfScore()+ "\n");
 
                 }
 
                 case "4" -> {
                     clearBuffer(sc);
                     System.out.println("Enter search term: (lowercase)");
-                    clearBuffer(sc);
                     String term = sc.nextLine();
                     System.out.println("Enter search stmnt: (first letter uppercase)");
                     String stmnt = sc.nextLine();
-                    System.out.println(KnowledgeBase.FindByTermAndStmnt( term, stmnt ));
+
+                    Record r = KnowledgeBase.FindByTermAndStmnt( term, stmnt );
+                    System.out.println("Term: " + r.getTerm() + "\nStatement: " + r.getStmnt() + "\nConfidence Score: " + r.getConfScore() + "\n");
                 }
 
                 case "5" -> {
@@ -83,7 +84,7 @@ public class Display {
 
                 default -> {
                     clearBuffer(sc);
-                    System.out.println("Invalid input! Please try again.");
+                    System.out.println("Invalid input! Please try again.\n");
                 }
             }
 
