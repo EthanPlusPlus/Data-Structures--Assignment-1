@@ -1,7 +1,0 @@
-water	Substance required in photosynthesis in plants	1.0
-drake	The best rapper still alive	1.0
-springbok	The name of South Africa's national rugby team	1.0
-phone case	Makes a phone look more stylish	0.8
-jabulani	Zulu word meaning "rejoice"	1.0
-bleach	A chemical that kills one hundred percent of germs	0.99
-clifton 4th	The most popular beach in Cape Town	0.35
